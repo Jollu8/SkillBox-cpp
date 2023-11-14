@@ -8,8 +8,145 @@
 #include "SkillBox.h"
 #include <chrono>
 #include <algorithm>
+#include <cassert>
 
-#define module_12_3
+#define module_14_3
+
+#ifdef module_14_3
+
+TEST_CASE("module_14_4") {
+    SUBCASE("Test: Equal matrix") {
+        int matrixA[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+        int matrixB[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+        CHECK(EqualMatrixs(matrixA, matrixB, 4));
+
+        int matrixC[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 17}};
+        CHECK_FALSE(EqualMatrixs(matrixA, matrixC, 4));
+    }
+
+    SUBCASE("Test: Matrix fill") {
+        int matrix[4][4];
+        int data[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+        matrixFill(matrix, 4, data);
+        CHECK(EqualMatrixs(matrix, data, 4));
+
+    }
+    SUBCASE("Test: Print matrix") {
+        int matrix[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+        std::string output = printMatrix(matrix, 4);
+        CHECK_EQ(output, "1 2 3 4 \n5 6 7 8 \n9 10 11 12 \n13 14 15 16 \n");
+    }
+
+
+}
+#endif
+
+
+#ifdef module_14_2
+
+TEST_CASE("module_13_2") {
+
+    char field[3][3] = {{'X', ' ', ' '},
+                        {' ', 'X', ' '},
+                        {' ', ' ', 'X'}};
+    int rowsNum = sizeof(field) / sizeof(field[0]);
+    SUBCASE("Test: Valid") {
+        CHECK(checkWinner(field, rowsNum));
+
+        char field2[3][3] = {{'X', 'X', 'X'},
+                             {' ', ' ', ' '},
+                             {' ', ' ', ' '}};
+        CHECK(checkWinner(field2, rowsNum));
+    }
+
+
+    SUBCASE("Test: Invalid") {
+        char field3[3][3] = {{' ', ' ', ' '},
+                             {' ', ' ', ' '},
+                             {' ', ' ', ' '}};
+        CHECK_FALSE(checkWinner(field3, rowsNum));
+    }
+
+}
+
+#endif
+
+
+#ifdef module_13_3
+
+TEST_CASE("module_13_3") {
+    int index = 0;
+    for(auto i = 0; i < 20; ++i) {
+        add(i+1,index );
+    }
+    add(-1, index);
+    for(auto i = 0; i < 20; ++i) {
+        CHECK(data[i] ==  i +1 );
+    }
+   CHECK(index == 20);
+
+    add(21, index);
+    add(22, index);
+    add(23, index);
+    add(-1, index);
+    for (int i = 0; i < 20; ++i) {
+        CHECK(data[i] == i + 4);
+    }
+    CHECK(index == 20);
+
+}
+
+#endif
+
+#ifdef module_13_2
+
+TEST_CASE("module_13_2") {
+    SUBCASE("Test: Example") {
+        std::vector<float> prices {2.5, 4.25, 3.0, 10.0};
+        std::vector<int> items {1, 1, 0, 3};
+        CHECK_EQ(calculateTotalCost(prices, items), 21.0);
+    }
+    SUBCASE("Test: Empty items ") {
+        std::vector<float> prices {2.5, 4.25, 3.0, 10.0};
+        std::vector<int> items;
+        CHECK_EQ(calculateTotalCost(prices, items), 0.0);
+    }
+    SUBCASE("Test: Zero price") {
+        std::vector<float> prices {0.0, 0.0, 0.0, 0.0};
+        std::vector<int> items {1, 1, 0, 3};
+        CHECK_EQ(calculateTotalCost(prices, items), 0.0);
+    }
+}
+#endif
+
+#ifdef module_13_1
+
+TEST_CASE("module_13_1") {
+    auto vec = fillVec(5);
+    if(vec.empty() || vec.size() != 5){
+        std::cout << "Ваша функция fillVec(int n) работает неправильно!\n";
+        abort();
+    }
+    SUBCASE("Test: Valid testing") {
+        for(auto i = 0; i < 4; ++i) {
+            removeElements(vec, i);
+            CHECK(vec[0] == i+1);
+        }
+
+        CHECK(vec.size() == 1);
+        removeElements(vec, 4);
+        CHECK(vec.empty());
+    }
+    SUBCASE("Test: Invalid test") {
+        vec = fillVec(5);
+        CHECK(vec.size() == 5);
+        removeElements(vec, 55);
+        CHECK(vec.size() == 5);
+
+    }
+}
+#endif
+
 
 #ifdef module_12_3
 TEST_CASE("module_12_3") {

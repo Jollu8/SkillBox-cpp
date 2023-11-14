@@ -1,11 +1,28 @@
-# Name of functions of any tasks
+# Тесты для SkillBox C++
 
-| Module    | Tasks                                     |                                                                                                                                  Functions |
-|:----------|-------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------:|
-| module 11 | Шифр Цезаря                               | `std::string encryptCaesar(const std::string & words, int shifr)` <br/> `std::string dencryptCaesar(const std::string & words, int shifr)` | 
-| module 11 | Проверка корректности email-адреса        |                                                                                              `bool isValidEmail(const std::string &email)` |
-| module 11 | Валидация IP-адреса                       |                                                                                                    `bool isValidIP(const std::string &ip)` |
-| module 11 | Оценка результатов игры в крестики-нолики |                                                                        `std::string checkTicTacToe(const std::vector<std::string>& board)` |
-| module 12 | Многоквартирный дом                       |                                                                                        `std::string runProgram(std::istringstream &input)` |
-| module 12 | Сортировка                                |                                                                                                void runProgram(std::vector<double> &input) |
-| module 12 | Использование assert | |
+- ## Required:
+
+Linux:
+- `sudo apt install build-essential`
+- idea рекомендуется Clion
+
+
+Mac os:
+- `brew install llvm`
+- idea рекомендуется Clion
+
+Windows:
+- Visual studio 17 и позднее или Clion
+- если Clion рекомендуется Clang 14 и позднее
+- Cmake
+
+Как использовать:
+1. Склонируй эту репозитори
+<img src="./img/img_1.png">
+<img src="./img/img_2.png">
+2. Возьми исходник из папки source нужную тебе задачу 
+3. реализуй в файле main.cpp для запуска программу выбери Ski
+4. для теста ваши функцию (без int main()) ставьте в файл SkilBox.cpp
+5. после как вложили свое решение в файл SkillBox.cpp
+6. Откройте файл `test.cpp` перепиши макрос `#define module_` + номер модуля например `#define module_10_1`
+7. после как внедрил изминение в макрос нажми запуск Test

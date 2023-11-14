@@ -13,11 +13,51 @@
 #include <cassert>
 
 
+#include <iostream>
 
-float travelTime(float distance, float speed) {
-    assert(speed >  0);
-    return distance / speed;
+using namespace std;
+
+void matrixFill(int arr[][4], int size, int data[][4]){
+
+    for(int i =0; i < size; i++){
+        for (int j = 0; j < size; j++)
+        {
+            arr[i][j] = data[i][j];
+        }
+    }
 }
+
+bool EqualMatrixs(int arrA[][4], int arrB[][4], int size){
+    for(int i =0; i < size; i++){
+        for (int j = 0; j < size; j++)
+        {
+            if(arrB[i][j] != arrA[i][j]) return false;
+        }
+    }
+
+    return true;
+}
+
+std::string printMatrix(int arr[][4], int size){
+    std::ostringstream oss;
+
+    for(int i =0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            oss << arr[i][j] << " ";
+        }
+        oss << endl;
+    }
+
+    return oss.str();
+}
+
+
+
+
+
+
 
 
 

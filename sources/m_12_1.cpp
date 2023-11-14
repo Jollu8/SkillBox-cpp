@@ -5,7 +5,6 @@
 #include <sstream>
 
 std::string runProgram(std::istringstream &input) {
-    // Здесь должен быть ваш код, который читает из input и пишет в output
     std::ostringstream output;
     std::string tenants[10];
 
