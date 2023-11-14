@@ -1,8 +1,14 @@
-// foo.h
-
+/// author LordJollu
+/// Если у вас появится вопросы или у вас возникли проблемы
+/// Пишите мне в телеграм @LordJollu
+/// Форма обращение:
+/// Уважаемый Джолу!
+/// У меня проблема или помоги или Твой тест например module_13_1 неправильный, прошу исправить.
+/// С уважением, (ваше имя)
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
+#define module_
 
 #include "test/doctest.h"
 #include "SkillBox.h"
@@ -10,7 +16,31 @@
 #include <algorithm>
 #include <cassert>
 
-#define module_14_3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #ifdef module_14_3
 

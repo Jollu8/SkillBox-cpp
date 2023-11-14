@@ -1,35 +1,15 @@
-#include <iostream>
 //#include "SkillBox.h"
 
+// =============Здесь вы можете писать свой код =====================
 
 
 #include <iostream>
-#include <string>
 
 
-#include <iostream>
-#include <algorithm>
-#include <array>
+int main() {
+    std::cout << "Hello SkillBox" << std::endl;
+}
 
-
-#include <vector>
-
-
-
-
-
-
-
-//int main() {
-//    // Вызов скрипта bash
-//    system("chmod +x ../format_script.sh");
-//    int result = system("../format_script.sh");
-//    if (result != 0) {
-//        // Если скрипт вернул ошибку, прекратить выполнение
-//        return 1;
-//    }
-//
-//}
 
 
 
